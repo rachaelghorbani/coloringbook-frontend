@@ -1,3 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Thasadith&display=swap');
+* {
+	box-sizing: border-box;
+}
 .App {
-  text-align: center;
+	text-align: center;
+	height: 100%;
+	font-family: 'Thasadith', sans-serif;
+}
+
+.navbar {
+	height: 100%; /* Full-height: remove this if you want "auto" height */
+	width: 160px; /* Set the width of the sidebar */
+	position: fixed; /* Fixed position elemnts are alwasy fixed position based on entire html document. so when set to fixed and left 0 it will be stuck on the left Sidebar (stay in place on scroll) and fixed*/
+	/* z-index: 1; Stay on top */
+	top: 0; /* Stay at the top */
+	left: 0;
+	background: radial-gradient(
+			ellipse farthest-side at 76% 77%,
+			rgba(245, 228, 212, 0.25) 4%,
+			rgba(255, 255, 255, 0) calc(4% + 1px)
+		),
+		radial-gradient(circle at 76% 40%, #fef6ec 4%, rgba(255, 255, 255, 0) 4.18%),
+		linear-gradient(135deg, #ff0000 0%, #000036 100%),
+		radial-gradient(ellipse at 28% 0%, #ffcfac 0%, rgba(98, 149, 144, 0.5) 100%),
+		linear-gradient(180deg, #cd6e8a 0%, #f5eab0 69%, #d6c8a2 70%, #a2758d 100%);
+	background-blend-mode: normal, normal, screen, overlay, normal;
+	/* background-color: rgb(190, 238, 210);  */
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 20px;
+}
+.navbar a {
+	text-decoration: none;
+	padding: 10px;
+	margin: 20px;
+	color: #3f3d56;
+	display: block;
+	position: relative;
+    text-align: justify;
+    top: 0;
+	transition: top .4s ease;
+}
+.navbar a:hover {
+	font-size: 1.2em;
+	top: 5px;
+}
+.main {
+	margin-left: 160px;
+}
+.navbar svg {
+	margin-right: 5px;
+}
+
+.loginContainer {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    background: linear-gradient(238.72deg, #e1e98e 0%, #8f00ff 100%), linear-gradient(64.82deg, #ad00ff 0%, #ff0000 90%),
+		linear-gradient(65.03deg, #00ffff 0%, #ff0000 99.79%),
+		radial-gradient(67.08% 100% at 50% 100%, #ff00c7 0%, #50005e 100%),
+		radial-gradient(100% 140% at 100% 0%, #5ed500 0%, #2200aa 100%);
+	background-blend-mode: color-dodge, difference, lighten, color-dodge, normal;
+}
+
+form {
+	display: grid;
+	grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    background: white;
+	/* width: 30%; */
+	/* background: linear-gradient(238.72deg, #ebff00 0%, #8f00ff 100%), linear-gradient(64.82deg, #ad00ff 0%, #ff0000 90%),
+		linear-gradient(65.03deg, #00ffff 0%, #ff0000 99.79%),
+		radial-gradient(67.08% 100% at 50% 100%, #ff00c7 0%, #50005e 100%),
+		radial-gradient(100% 140% at 100% 0%, #5ed500 0%, #2200aa 100%);
+	background-blend-mode: color-dodge, difference, lighten, color-dodge, normal; */
+	border-radius: 8px;
+	padding: 0px 30px;
+}
+.loginHeader {
+	grid-area: 1 / 1/ span 1 / 2;
+	margin-top: 15px;
+}
+.username {
+	grid-area: 2 / 1 / span 1 / 2;
+	margin: 10px;
+}
+.password {
+	grid-area: 3 / 1 / span 1 / 2;
+	margin: 10px;
+}
+
+.submitButton {
+	grid-area: 4 / 1 / span 1 / 2;
+	width: 30%;
+	margin: 0 auto 10px auto;
+	padding: 8px;
+	border: none;
+	border-radius: 7px;
+    background: rgb(83, 202, 190);
+    outline: none
+}
+
+.submitButton:hover{
+    transform: scale(1.1)
+
+}
+
+form input:hover {
+	cursor: pointer;
+}
+
+label + input {
+	height: 30px;
+    border-radius: 7px;
+    border: 1px solid rgb(83, 202, 190); 
+	margin: 2px;
+	padding: 4px 8px;
+}
+form label {
+	display: block;
+}
+.loginHeader svg {
+	margin: 0 12px;
+}
+.navbar img {
+	height: 10%;
+}
+.loginContainerfailed {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    background: linear-gradient(238.72deg, #ebff00 0%, #8f00ff 100%), linear-gradient(64.82deg, #ad00ff 0%, #ff0000 90%),
+		linear-gradient(65.03deg, #00ffff 0%, #ff0000 99.79%),
+		radial-gradient(67.08% 100% at 50% 100%, #ff00c7 0%, #50005e 100%),
+		radial-gradient(100% 140% at 100% 0%, #5ed500 0%, #2200aa 100%);
+	background-blend-mode: color-dodge, difference, lighten, color-dodge, normal;
+    animation: shake 1s linear ;
+    /* cubic-bezier(.36, .07, .19, .97) */
+
+	/* transform: translate3d(0, 0, 0); */
+}
+@keyframes shake {
+	10%, 90% {
+		transform: translate(-2px, 0);
+	}
+	20%, 80% {
+		transform: translate(4px, 0);
+	}
+	30%, 50%, 70% {
+		transform: translate(-8px, 0);
+	}
+	40%, 60% {
+		transform: translate(8px, 0);
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.navbar {
+		height: 15%;
+		width: 100%; /* Set the width of the sidebar */
+		position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+		background: radial-gradient(
+				ellipse farthest-side at 76% 77%,
+				rgba(245, 228, 212, 0.25) 4%,
+				rgba(255, 255, 255, 0) calc(4% + 1px)
+			),
+			radial-gradient(circle at 76% 40%, #fef6ec 4%, rgba(255, 255, 255, 0) 4.18%),
+			linear-gradient(135deg, #ff0000 0%, #000036 100%),
+			radial-gradient(ellipse at 28% 0%, #ffcfac 0%, rgba(98, 149, 144, 0.5) 100%),
+			linear-gradient(180deg, #cd6e8a 0%, #f5eab0 69%, #d6c8a2 70%, #a2758d 100%);
+		background-blend-mode: normal, normal, screen, overlay, normal;
+		padding-left: 5%;
+	}
+	.main {
+		margin: auto;
+	}
+	.navbar a {
+		display: inline;
+		float: right;
+		margin: auto;
+	}
+	.navbar img {
+		display: inline;
+		height: 60%;
+		float: left;
+	}
 }
