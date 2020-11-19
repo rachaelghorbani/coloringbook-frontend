@@ -22,7 +22,6 @@ class LoginForm extends React.Component {
 
     
 	render() {
-        console.log
 		return (
 			<div className={`loginContainer${!this.props.loginFailed ? '': 'failed'}`}>
 				<form onSubmit={this.submitHandler}>
