@@ -26,10 +26,15 @@ export const loginSubmit = (user) => {
 		});
 	};
 };
-
+export const logoutUser = () => {
+	return {
+		type: 'LOGOUT_USER',
+		payload: null
+	};
+};
 export const resetLoginSuccess = () => {
 	return {
-		action: 'RESET_LOGIN_SUCCESS',
+		type: 'RESET_LOGIN_SUCCESS',
 		payload: false
 	};
 };

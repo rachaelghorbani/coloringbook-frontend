@@ -1,4 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Thasadith&display=swap');
+:root{
+    --tiedye-background: linear-gradient(115.58deg, #e3fc00 0%, #0047a4 100.22%), radial-gradient(92.72% 100% at 50% 0%, #EBFFCB 0%, #f76342 100%), radial-gradient(92.72% 100% at 50% 0%, #FAFF00 0%, #820000 100%), radial-gradient(109.21% 213.32% at 100% 0%, #f7827a4f 0%, #2994b4 100%), linear-gradient(127.43deg, #D50000 0%, #56fff7 100%);
+    --tyedye-background-blend-mode: lighten, overlay, lighten, screen, normal;
+    --navbar-background: radial-gradient(
+        ellipse farthest-side at 76% 77%,
+        rgba(245, 228, 212, 0.25) 4%,
+        rgba(255, 255, 255, 0) calc(4% + 1px)
+    ),
+    radial-gradient(circle at 76% 40%, #fef6ec 4%, rgba(255, 255, 255, 0) 4.18%),
+    linear-gradient(135deg, #ff0000 0%, #000036 100%),
+    radial-gradient(ellipse at 28% 0%, #ffcfac 0%, rgba(98, 149, 144, 0.5) 100%),
+    linear-gradient(180deg, #cd6e8a 0%, #f5eab0 69%, #d6c8a2 70%, #a2758d 100%);
+    --navbar-background-blend-mode: normal, normal, screen, overlay, normal
+}
 * {
 	box-sizing: border-box;
 }
@@ -14,18 +28,9 @@
 	position: fixed; /* Fixed position elemnts are alwasy fixed position based on entire html document. so when set to fixed and left 0 it will be stuck on the left Sidebar (stay in place on scroll) and fixed*/
 	/* z-index: 1; Stay on top */
 	top: 0; /* Stay at the top */
-	left: 0;
-	background: radial-gradient(
-			ellipse farthest-side at 76% 77%,
-			rgba(245, 228, 212, 0.25) 4%,
-			rgba(255, 255, 255, 0) calc(4% + 1px)
-		),
-		radial-gradient(circle at 76% 40%, #fef6ec 4%, rgba(255, 255, 255, 0) 4.18%),
-		linear-gradient(135deg, #ff0000 0%, #000036 100%),
-		radial-gradient(ellipse at 28% 0%, #ffcfac 0%, rgba(98, 149, 144, 0.5) 100%),
-		linear-gradient(180deg, #cd6e8a 0%, #f5eab0 69%, #d6c8a2 70%, #a2758d 100%);
-	background-blend-mode: normal, normal, screen, overlay, normal;
-	/* background-color: rgb(190, 238, 210);  */
+    left: 0;
+    background: var(--navbar-background);
+    background-blend-mode: var(--navbar-background-blend-mode);
 	overflow-x: hidden; /* Disable horizontal scroll */
 	padding-top: 20px;
 }
@@ -57,24 +62,29 @@
 	display: flex;
 	align-items: center;
     justify-content: center;
-    background: linear-gradient(238.72deg, #e1e98e 0%, #8f00ff 100%), linear-gradient(64.82deg, #ad00ff 0%, #ff0000 90%),
-		linear-gradient(65.03deg, #00ffff 0%, #ff0000 99.79%),
-		radial-gradient(67.08% 100% at 50% 100%, #ff00c7 0%, #50005e 100%),
-		radial-gradient(100% 140% at 100% 0%, #5ed500 0%, #2200aa 100%);
-	background-blend-mode: color-dodge, difference, lighten, color-dodge, normal;
+    background: var(--tiedye-background);
+	background-blend-mode: var(--tyedye-background-blend-mode);
 }
 
-form {
+.loginFormFailed {
 	display: grid;
 	grid-template-columns: auto;
     grid-template-rows: auto auto auto auto;
     background: white;
-	/* width: 30%; */
-	/* background: linear-gradient(238.72deg, #ebff00 0%, #8f00ff 100%), linear-gradient(64.82deg, #ad00ff 0%, #ff0000 90%),
-		linear-gradient(65.03deg, #00ffff 0%, #ff0000 99.79%),
-		radial-gradient(67.08% 100% at 50% 100%, #ff00c7 0%, #50005e 100%),
-		radial-gradient(100% 140% at 100% 0%, #5ed500 0%, #2200aa 100%);
-	background-blend-mode: color-dodge, difference, lighten, color-dodge, normal; */
+	border-radius: 8px;
+    padding: 0px 30px;
+    animation: shake 1s linear ;
+
+}
+.loginForm {
+	display: grid;
+	grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    /* background-color: white; */
+    background-image: radial-gradient(
+    rgba(255, 255, 255, 1), 
+    transparent 100%
+100%);
 	border-radius: 8px;
 	padding: 0px 30px;
 }
@@ -114,7 +124,7 @@ form input:hover {
 label + input {
 	height: 30px;
     border-radius: 7px;
-    border: 1px solid rgb(83, 202, 190); 
+    border: 1px solid rgb(83, 202, 190);  
 	margin: 2px;
 	padding: 4px 8px;
 }
@@ -127,22 +137,7 @@ form label {
 .navbar img {
 	height: 10%;
 }
-.loginContainerfailed {
-	height: 100vh;
-	width: 100%;
-	display: flex;
-	align-items: center;
-    justify-content: center;
-    background: linear-gradient(238.72deg, #ebff00 0%, #8f00ff 100%), linear-gradient(64.82deg, #ad00ff 0%, #ff0000 90%),
-		linear-gradient(65.03deg, #00ffff 0%, #ff0000 99.79%),
-		radial-gradient(67.08% 100% at 50% 100%, #ff00c7 0%, #50005e 100%),
-		radial-gradient(100% 140% at 100% 0%, #5ed500 0%, #2200aa 100%);
-	background-blend-mode: color-dodge, difference, lighten, color-dodge, normal;
-    animation: shake 1s linear ;
-    /* cubic-bezier(.36, .07, .19, .97) */
-
-	/* transform: translate3d(0, 0, 0); */
-}
+ 
 @keyframes shake {
 	10%, 90% {
 		transform: translate(-2px, 0);
@@ -163,16 +158,8 @@ form label {
 		height: 15%;
 		width: 100%; /* Set the width of the sidebar */
 		position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-		background: radial-gradient(
-				ellipse farthest-side at 76% 77%,
-				rgba(245, 228, 212, 0.25) 4%,
-				rgba(255, 255, 255, 0) calc(4% + 1px)
-			),
-			radial-gradient(circle at 76% 40%, #fef6ec 4%, rgba(255, 255, 255, 0) 4.18%),
-			linear-gradient(135deg, #ff0000 0%, #000036 100%),
-			radial-gradient(ellipse at 28% 0%, #ffcfac 0%, rgba(98, 149, 144, 0.5) 100%),
-			linear-gradient(180deg, #cd6e8a 0%, #f5eab0 69%, #d6c8a2 70%, #a2758d 100%);
-		background-blend-mode: normal, normal, screen, overlay, normal;
+        background: var(--navbar-background);
+        background-blend-mode: var(--navbar-background-blend-mode);
 		padding-left: 5%;
 	}
 	.main {
