@@ -25,14 +25,14 @@ const LoginForm = (props) => {
 		setPassword('');
 	};
 
-    //resets failedlogin to false when the component unmounts so that the form doesn't shake if you click elsewhere and then come back to the login page with the form
+    //component should update any time the loginFailed prop is changed. After 2 seconds it will reset to false. This way the effect happens every time a user input is incorrect, not just the first time
     useEffect(()=>{
         setTimeout(()=>{
             props.resetLoginSuccess()
         }, 2000)
-        //reset loginsuccess after 2 seconds an pass props.loginfailed as a dependency
-        
     }, [props.loginFailed])
+
+    //resets failedlogin to false when the component unmounts so that the form doesn't shake if you click elsewhere and then come back to the login page with the form
 
     useEffect(()=>{
         return () => {
@@ -47,11 +47,11 @@ console.log(props.loginFailed)
 			<form className={`loginForm${!props.loginFailed ? '' : 'Failed'}`} onSubmit={submitHandler}>
 				<div className="loginHeader">
 					<FontAwesomeIcon icon={faStarHalf} />
-					<h3 style={{ display: 'inline' }}>Login Form</h3>
+					<h3 style={{ display: 'inline' }}>Login</h3>
 					<FontAwesomeIcon icon={faStarHalf} flip="horizontal" />
 				</div>
 				<div className="username">
-					<label>Username</label>
+					{/* <label>Username</label> */}
 					<input
 						name="username"
 						onChange={changeHandler}
@@ -61,7 +61,7 @@ console.log(props.loginFailed)
 					/>
 				</div>
 				<div className="password">
-					<label>Password</label>
+					{/* <label>Password</label> */}
 					<input
 						name="password"
 						onChange={changeHandler}
@@ -70,7 +70,9 @@ console.log(props.loginFailed)
 						placeholder="enter password"
 					/>
 				</div>
+                <div className='buttonGrid'>
 				<input className="submitButton" type="submit" value="Login!" />
+                </div>
 			</form>
 		</div>
 	);

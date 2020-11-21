@@ -1,11 +1,5 @@
 export const loginSubmit = (user) => {
 	return function(dispatch) {
-        // const resetLoginSuccess = () => {
-        //     setTimeout(() => {
-        //         this.props.resetLoginSuccess();
-        //    },2000);
-        // }
-
 		const options = {
 			method: 'POST',
 			headers: {
@@ -19,13 +13,37 @@ export const loginSubmit = (user) => {
 			if (returnedUser.user) {
 				localStorage.setItem('token', returnedUser.jwt);
 				return dispatch({ type: 'LOGIN_USER', payload: returnedUser.user });
-				//set local storage with token
 			} else {
 				return dispatch({ type: 'LOGIN_FAILED', payload: true });
 			}
 		});
 	};
 };
+export const findUserByToken = (history) => {
+	return function(dispatch) {
+		const token = localStorage.getItem('token');
+		if (token) {
+			fetch('http://localhost:3000/profile', {
+				method: 'GET',
+				headers: {
+					Authorization: `Bearer ${token}`
+				}
+			})
+				.then((resp) => resp.json())
+				.then((user) => {
+					if (user.user) {
+						history.push('/mysummary');
+						return dispatch({ type: 'LOGIN_FROM_TOKEN', payload: user.user });
+					} else {
+						history.push('/');
+					}
+				});
+		} else {
+			history.push('/');
+		}
+	};
+};
+
 export const logoutUser = () => {
 	return {
 		type: 'LOGOUT_USER',

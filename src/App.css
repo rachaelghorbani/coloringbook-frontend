@@ -1,17 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Thasadith&display=swap');
-:root{
-    --tiedye-background: linear-gradient(115.58deg, #e3fc00 0%, #0047a4 100.22%), radial-gradient(92.72% 100% at 50% 0%, #EBFFCB 0%, #f76342 100%), radial-gradient(92.72% 100% at 50% 0%, #FAFF00 0%, #820000 100%), radial-gradient(109.21% 213.32% at 100% 0%, #f7827a4f 0%, #2994b4 100%), linear-gradient(127.43deg, #D50000 0%, #56fff7 100%);
-    --tyedye-background-blend-mode: lighten, overlay, lighten, screen, normal;
-    --navbar-background: radial-gradient(
-        ellipse farthest-side at 76% 77%,
-        rgba(245, 228, 212, 0.25) 4%,
-        rgba(255, 255, 255, 0) calc(4% + 1px)
-    ),
-    radial-gradient(circle at 76% 40%, #fef6ec 4%, rgba(255, 255, 255, 0) 4.18%),
-    linear-gradient(135deg, #ff0000 0%, #000036 100%),
-    radial-gradient(ellipse at 28% 0%, #ffcfac 0%, rgba(98, 149, 144, 0.5) 100%),
-    linear-gradient(180deg, #cd6e8a 0%, #f5eab0 69%, #d6c8a2 70%, #a2758d 100%);
-    --navbar-background-blend-mode: normal, normal, screen, overlay, normal
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+:root {
+	--tiedye-background: linear-gradient(115.58deg, #e3fc00 0%, #0047a4 100.22%),
+		radial-gradient(92.72% 100% at 50% 0%, #ebffcb 0%, #f76342 100%),
+		radial-gradient(92.72% 100% at 50% 0%, #faff00 0%, #820000 100%),
+		radial-gradient(109.21% 213.32% at 100% 0%, #f7827a4f 0%, #2994b4 100%),
+		linear-gradient(127.43deg, #472601 0%, #6c7eb9 100%);
+	--tyedye-background-blend-mode: lighten, overlay, lighten, screen, normal;
+	--navbar-background: radial-gradient(
+			ellipse farthest-side at 76% 77%,
+			rgba(245, 228, 212, 0.25) 4%,
+			rgba(255, 255, 255, 0) calc(4% + 1px)
+		),
+		radial-gradient(circle at 76% 40%, #fef6ec 4%, rgba(255, 255, 255, 0) 4.18%),
+		linear-gradient(135deg, #ff0000 0%, #000036 100%),
+		radial-gradient(ellipse at 28% 0%, #ffcfac 0%, rgba(98, 149, 144, 0.5) 100%),
+		linear-gradient(180deg, #cd6e8a 0%, #f5eab0 69%, #d6c8a2 70%, #a2758d 100%);
+	--navbar-background-blend-mode: normal, normal, screen, overlay, normal;
+	--navy-text: #3f3d56;
 }
 * {
 	box-sizing: border-box;
@@ -28,9 +34,9 @@
 	position: fixed; /* Fixed position elemnts are alwasy fixed position based on entire html document. so when set to fixed and left 0 it will be stuck on the left Sidebar (stay in place on scroll) and fixed*/
 	/* z-index: 1; Stay on top */
 	top: 0; /* Stay at the top */
-    left: 0;
-    background: var(--navbar-background);
-    background-blend-mode: var(--navbar-background-blend-mode);
+	left: 0;
+	background: var(--navbar-background);
+	background-blend-mode: var(--navbar-background-blend-mode);
 	overflow-x: hidden; /* Disable horizontal scroll */
 	padding-top: 20px;
 }
@@ -38,16 +44,41 @@
 	text-decoration: none;
 	padding: 10px;
 	margin: 20px;
-	color: #3f3d56;
+	color: var(--navy-text);
 	display: block;
 	position: relative;
-    text-align: justify;
-    top: 0;
+	text-align: justify;
+	top: 0;
 	transition: top .4s ease;
 }
 .navbar a:hover {
 	font-size: 1.2em;
 	top: 5px;
+}
+
+.horizNavfalse {
+	height: 160px;
+	width: 100%;
+	overflow-y: hidden;
+	position: fixed;
+	top: 0;
+	background: var(--navbar-background);
+	background-blend-mode: var(--navbar-background-blend-mode);
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, 80px);
+}
+.horizNavtrue {
+	height: 320px;
+	width: 100%;
+	overflow-y: hidden;
+	position: fixed;
+	top: 0;
+	background: var(--navbar-background);
+	background-blend-mode: var(--navbar-background-blend-mode);
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, 80px);
 }
 .main {
 	margin-left: 160px;
@@ -55,36 +86,38 @@
 .navbar svg {
 	margin-right: 5px;
 }
+.navbar img:hover {
+	animation: dance 1s linear;
+}
 
 .loginContainer {
 	height: 100vh;
 	width: 100%;
+	margin: auto;
 	display: flex;
 	align-items: center;
-    justify-content: center;
-    background: var(--tiedye-background);
+	justify-content: center;
+	background: var(--tiedye-background);
 	background-blend-mode: var(--tyedye-background-blend-mode);
 }
 
 .loginFormFailed {
 	display: grid;
 	grid-template-columns: auto;
-    grid-template-rows: auto auto auto auto;
-    background: white;
+	grid-template-rows: auto auto auto auto;
+	color: var(--navy-text);
+	background-image: radial-gradient(rgb(251, 252, 233), transparent 100% 100%);
 	border-radius: 8px;
-    padding: 0px 30px;
-    animation: shake 1s linear ;
-
+	padding: 0px 30px;
+	animation: shake 1s linear;
 }
 .loginForm {
 	display: grid;
 	grid-template-columns: auto;
-    grid-template-rows: auto auto auto auto;
-    /* background-color: white; */
-    background-image: radial-gradient(
-    rgba(255, 255, 255, 1), 
-    transparent 100%
-100%);
+	grid-template-rows: auto auto auto auto;
+	color: var(--navy-text);
+	/* background-color: white; */
+	background-image: radial-gradient(rgb(251, 252, 233), transparent 100% 100%);
 	border-radius: 8px;
 	padding: 0px 30px;
 }
@@ -96,35 +129,94 @@
 	grid-area: 2 / 1 / span 1 / 2;
 	margin: 10px;
 }
+.username input:focus,
+.password input:focus,
+.signUpFirstName input:focus,
+.signUpLastName input:focus,
+.signUpUsername input:focus,
+.signUpPassword input:focus {
+	outline: none;
+	box-shadow: 0px 20px 40px rgba(241, 40, 147, 0.3);
+}
+
 .password {
 	grid-area: 3 / 1 / span 1 / 2;
 	margin: 10px;
 }
+.buttonGrid{
+    grid-area: 4 / 1 / span 1 / 2;
+    margin: 0 auto 10px auto
 
-.submitButton {
-	grid-area: 4 / 1 / span 1 / 2;
-	width: 30%;
-	margin: 0 auto 10px auto;
-	padding: 8px;
-	border: none;
-	border-radius: 7px;
-    background: rgb(83, 202, 190);
-    outline: none
 }
 
-.submitButton:hover{
-    transform: scale(1.1)
+.buttonGridSignup{
+    grid-area: 4 / 1 / span 1 / 3;
+    margin: 0 auto 10px auto
+}
+.submitButton {
+	/* width: 50%; */
+	/* margin-bottom: 17px;
+	padding: 8px;
+	border: none;
+	border-radius: 7px; */
+	background: var(--navy-text);
+	color: white;
+	outline: none;
+}
 
+.submitButton:hover {
+	transform: scale(1.1);
+}
+.signupForm {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	color: var(--navy-text);
+	/* background-color: white; */
+	background-image: radial-gradient(rgb(251, 252, 233), transparent 100% 100%);
+	border-radius: 8px;
+	padding: 0px 30px;
+	gap: 10px;
+}
+.signUpHeader {
+	grid-area: 1 / 1 / 2 / 3;
+	margin-top: 15px;
+}
+.signUpFirstName {
+	grid-area: 2 / 1 / 3 / 2;
+}
+.signUpLastName {
+	grid-area: 2 / 2 / 3 / 3;
+}
+.signUpUsername {
+	grid-area: 3 / 1 / 4 / 2;
+}
+.signUpPassword {
+	grid-area: 3 / 2 / 4 / 3;
+}
+.signUpSubmitButton {
+	grid-area: 4 / 1 / 5 / 3;
+	height: 60%;
+	width: 20%;
+	margin: 0 auto 10px auto;
+	border: none;
+	border-radius: 7px;
+	background: var(--navy-text);
+	color: white;
+	outline: none;
+}
+.signUpSubmitButton:hover {
+	transform: scale(1.1);
 }
 
 form input:hover {
 	cursor: pointer;
 }
 
-label + input {
+.loginForm input, .loginFormFailed input, .signupForm input {
 	height: 30px;
-    border-radius: 7px;
-    border: 1px solid rgb(83, 202, 190);  
+	border-radius: 7px;
+	border: 1px solid var(--navy-text);
 	margin: 2px;
 	padding: 4px 8px;
 }
@@ -137,33 +229,62 @@ form label {
 .navbar img {
 	height: 10%;
 }
- 
+.horizNavfalse img,
+.horizNavtrue img {
+	grid-area: 1 / 1 / 2 / 2;
+	height: 100%;
+	margin: auto;
+	align-items: baseline;
+}
+.downArrow {
+	grid-area: 2 / 1 / 3 / 2;
+	align-items: baseline;
+	border: 1px solid red;
+}
+.downArrow svg {
+	position: relative;
+	top: 50px;
+}
+.horizNavLink2 {
+	grid-area: 3 / 1 / 4 / 2;
+	margin: auto;
+}
+.horizNavLink1 {
+	grid-area: 4 / 1 / 5 / 2;
+	margin: auto;
+}
 @keyframes shake {
-	10%, 90% {
+	10%,
+	90% {
 		transform: translate(-2px, 0);
 	}
-	20%, 80% {
+	20%,
+	80% {
 		transform: translate(4px, 0);
 	}
-	30%, 50%, 70% {
+	30%,
+	50%,
+	70% {
 		transform: translate(-8px, 0);
 	}
-	40%, 60% {
+	40%,
+	60% {
 		transform: translate(8px, 0);
 	}
 }
 
 @media only screen and (max-width: 768px) {
+    .loginContainer{
+        height: calc(100vh - 100px)
+    }
 	.navbar {
-		height: 15%;
+		height: 100px;
 		width: 100%; /* Set the width of the sidebar */
-		position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-        background: var(--navbar-background);
-        background-blend-mode: var(--navbar-background-blend-mode);
 		padding-left: 5%;
 	}
 	.main {
-		margin: auto;
+        margin: 100px 0px 0px 0px;
+        overflow:hidden
 	}
 	.navbar a {
 		display: inline;
@@ -175,4 +296,97 @@ form label {
 		height: 60%;
 		float: left;
 	}
+
+	.signupForm {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(6, 1fr);
+	}
+	.signUpHeader {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+	.signUpFirstName {
+		grid-area: 2 / 1 / 3 / 2;
+	}
+	.signUpLastName {
+		grid-area: 3 / 1 / 4 / 2;
+	}
+	.signUpUsername {
+		grid-area: 4 / 1 / 5 / 2;
+	}
+	.signUpPassword {
+		grid-area: 5 / 1 / 6 / 2;
+	}
+	.buttonGridSignup {
+        grid-area: 6 / 1 / 7 / 2;
+        margin: 0;
+        /*  
+        width: 100%; */
+    }
+    .submitButton{
+        width: 100%;
+
+    }
+    .buttonGrid{
+        margin: 5px 0 15px 0
+    
+    }
+    .username, .password{
+        margin: 10px 0 10px 0;
+    }
+
+  
+}
+.welcomeText {
+	position: relative;
+	width: 10.3em;
+	margin: 0 auto;
+	border-right: 2px solid rgba(255, 255, 255, .75);
+	color: var(--navy-text);
+	font-size: 4em;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	transform: translateY(-50%);
+	font-family: 'Special Elite', cursive;
+}
+
+.animTypewriter {
+	animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 1000ms steps(44) infinite normal;
+}
+
+@keyframes typewriter {
+	from {
+		width: 0;
+	}
+	to {
+		width: 10.3em;
+	}
+}
+@keyframes blinkTextCursor {
+	from {
+		border-right-color: rgba(255, 255, 255, .75);
+	}
+	to {
+		border-right-color: transparent;
+	}
+}
+@keyframes dance {
+	0%,
+	100% {
+		transform: rotate(0deg);
+	}
+	10%,40%,
+	80% {
+		transform: rotate(-20deg);
+	}
+	20%,60%,
+	90% {
+		transform: rotate(20deg);
+	}
+	/* 40% {
+		transform: rotate(-20deg);
+	}
+	60% {
+		transform: rotate(20deg);
+	} */
 }
