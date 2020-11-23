@@ -18,7 +18,7 @@ const NavBar = (props) => {
 	const linksToShow = () => {
 		if (props.user) {
 			return (
-				<nav>
+				<>
 					<Link to="/">
 						<FontAwesomeIcon icon={faHome} />Home
 					</Link>
@@ -28,18 +28,18 @@ const NavBar = (props) => {
 					<Link to="/" onClick={localLogout}>
 						<FontAwesomeIcon icon={faSignInAlt} flip="horizontal" />Logout
 					</Link>
-				</nav>
+				</>
 			);
 		} else {
 			return (
-				<nav>
+				<>
 					<Link to="/login">
 						<FontAwesomeIcon icon={faClipboardCheck} />Login
 					</Link>
 					<Link to="/signup">
 						<FontAwesomeIcon icon={faSignInAlt} />Signup
 					</Link>
-				</nav>
+				</>
 			);
 		}
 	};
@@ -80,10 +80,10 @@ const NavBar = (props) => {
     }
 	console.log(navExpand);
 	return (	
-		<div className="navbar">
+		<nav className="navbar">
 			<img alt="sheep svg" src={undraw_refreshing_beverage_td3r} />
 			{linksToShow()}
-		</div>
+		</nav>
 	);
 };
 

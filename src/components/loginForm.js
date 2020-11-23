@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { loginSubmit, resetLoginSuccess } from '../redux/actions/userActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStarHalf } from '@fortawesome/free-solid-svg-icons';
+import ParticlesBackground from '../components/particlesBackground'
+
 
 const LoginForm = (props) => {
 	// username is our username state, and setUsername is our function to update the username state value
@@ -44,6 +46,8 @@ const LoginForm = (props) => {
 console.log(props.loginFailed)
 	return (
 		<div className="loginContainer">
+            <ParticlesBackground />
+            <div style={{position: 'absolute'}}>
 			<form className={`loginForm${!props.loginFailed ? '' : 'Failed'}`} onSubmit={submitHandler}>
 				<div className="loginHeader">
 					<FontAwesomeIcon icon={faStarHalf} />
@@ -74,6 +78,7 @@ console.log(props.loginFailed)
 				<input className="submitButton" type="submit" value="Login!" />
                 </div>
 			</form>
+            </div>
 		</div>
 	);
 };
