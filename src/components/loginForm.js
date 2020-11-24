@@ -5,6 +5,7 @@ import { loginSubmit, resetLoginSuccess } from '../redux/actions/userActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import ParticlesBackground from '../components/particlesBackground'
+import {withRouter} from 'react-router-dom'
 
 
 const LoginForm = (props) => {
@@ -22,7 +23,7 @@ const LoginForm = (props) => {
 
 	const submitHandler = (e) => {
 		e.preventDefault();
-		props.loginSubmit({ username, password });
+		props.loginSubmit({ username, password }, props.history);
 		setUsername('');
 		setPassword('');
 	};
@@ -91,8 +92,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		loginSubmit: (user) => dispatch(loginSubmit(user)),
+		loginSubmit: (user, history) => dispatch(loginSubmit(user, history)),
         resetLoginSuccess: () => dispatch(resetLoginSuccess()),
 	};
 };
-export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(LoginForm));

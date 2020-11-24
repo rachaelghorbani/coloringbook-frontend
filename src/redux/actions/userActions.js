@@ -1,4 +1,4 @@
-export const loginSubmit = (user) => {
+export const loginSubmit = (user, history) => {
 	return function(dispatch) {
 		const options = {
 			method: 'POST',
@@ -11,7 +11,8 @@ export const loginSubmit = (user) => {
 
 		fetch('http://localhost:3000/login', options).then((resp) => resp.json()).then((returnedUser) => {
 			if (returnedUser.user) {
-				localStorage.setItem('token', returnedUser.jwt);
+                localStorage.setItem('token', returnedUser.jwt);
+                history.push('/home')
 				return dispatch({ type: 'LOGIN_USER', payload: returnedUser.user });
 			} else {
 				return dispatch({ type: 'LOGIN_FAILED', payload: true });
@@ -32,7 +33,7 @@ export const findUserByToken = (history) => {
 				.then((resp) => resp.json())
 				.then((user) => {
 					if (user.user) {
-						history.push('/mysummary');
+						history.push('/home');
 						return dispatch({ type: 'LOGIN_FROM_TOKEN', payload: user.user });
 					} else {
 						history.push('/');
