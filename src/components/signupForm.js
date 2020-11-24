@@ -72,7 +72,7 @@ const SignupForm = (props) => {
 					<div className="signUpUsername">
 						<label>Username</label>
 						<input
-							placeholder="enter user name"
+							placeholder="enter username"
 							name="username"
 							type="text"
 							value={username}
