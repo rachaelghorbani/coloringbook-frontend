@@ -78,7 +78,6 @@ const NavBar = (props) => {
     const expandNav = () => {
         setNavExpand(prevState => !prevState)
     }
-	console.log(navExpand);
 	return (	
 		<nav className="navbar">
 			<img alt="sheep svg" src={undraw_refreshing_beverage_td3r} />

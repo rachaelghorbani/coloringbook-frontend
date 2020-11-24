@@ -44,6 +44,31 @@ export const findUserByToken = (history) => {
 	};
 };
 
+export const submitNewUser = (user, history) => {
+    return function(dispatch){
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({user})
+        }
+        fetch('http://localhost:3000/users', options)
+        .then(resp => resp.json())
+        .then(newUser => {
+            if(newUser.user){
+                history.push('/home')
+                localStorage.setItem('token', newUser.jwt);
+                return dispatch({type: 'SIGNUP_USER', payload: newUser.user})
+            }
+            else {
+                return dispatch({ type: 'LOGIN_FAILED', payload: true });
+            }
+        })
+    }
+}
+
 export const logoutUser = () => {
 	return {
 		type: 'LOGOUT_USER',

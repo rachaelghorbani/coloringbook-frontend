@@ -178,6 +178,21 @@
 	padding: 0px 30px;
 	gap: 10px;
 }
+.signupFormFailed {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	color: var(--navy-text);
+	/* background-color: white; */
+	background-image: radial-gradient(rgb(251, 252, 233), transparent 100% 100%);
+	border-radius: 8px;
+	padding: 0px 30px;
+    gap: 10px;
+    animation: shake 1s linear;
+}
+
+
+
 .signUpHeader {
 	grid-area: 1 / 1 / 2 / 3;
 	margin-top: 15px;
@@ -213,7 +228,7 @@ form input:hover {
 	cursor: pointer;
 }
 
-.loginForm input, .loginFormFailed input, .signupForm input {
+.loginForm input, .loginFormFailed input, .signupForm input, .signupFormFailed input {
 	height: 30px;
 	border-radius: 7px;
 	border: 1px solid var(--navy-text);
