@@ -26,8 +26,16 @@ const LoginForm = (props) => {
 		props.loginSubmit({ username, password }, props.history);
 		setUsername('');
 		setPassword('');
-	};
-
+    };
+    
+//     const setArray = () => {
+//         const newArr = new Array(10)
+//         for(let i=0; i< newArr.length; i++){
+//             newArr[i] = 'white'
+//         }
+//         return newArr
+//     }
+// console.log(setArray())
     //component should update any time the loginFailed prop is changed. After 2 seconds it will reset to false. This way the effect happens every time a user input is incorrect, not just the first time
     useEffect(()=>{
         setTimeout(()=>{

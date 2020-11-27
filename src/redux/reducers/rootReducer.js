@@ -1,10 +1,33 @@
 import { combineReducers } from 'redux';
 
-let defaultState = {
-	user: null,
-	loginFailed: false
+const initialFill = () => {
+	let newArr = new Array(11);
+	for (let i = 0; i < newArr.length; i++) {
+		newArr[i] = 'white';
+	}
+	return newArr;
 };
 
+let defaultState = {
+	user: null,
+	loginFailed: false,
+	initialFill: initialFill(),
+	currentColor: 'white'
+};
+const initialFillReducer = (state = defaultState.initialFill, action) => {
+	switch (action.type) {
+		default:
+			return state;
+	}
+};
+const currentColorReducer = (state = defaultState.currentColor, action) => {
+	switch (action.type) {
+		case 'SET_CURRENT_COLOR':
+			return action.payload;
+		default:
+			return state;
+	}
+};
 const userReducer = (state = defaultState.user, action) => {
 	switch (action.type) {
 		case 'LOGIN_USER':
@@ -33,7 +56,9 @@ const loginFailedReducer = (state = defaultState.loginFailed, action) => {
 
 let rootReducer = combineReducers({
 	user: userReducer,
-	loginFailed: loginFailedReducer
+	loginFailed: loginFailedReducer,
+    initialFill: initialFillReducer,
+    currentColor: currentColorReducer
 });
 
 export default rootReducer;
