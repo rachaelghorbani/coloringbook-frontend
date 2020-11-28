@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 const initialFill = () => {
-	let newArr = new Array(11);
+	let newArr = new Array(688);
 	for (let i = 0; i < newArr.length; i++) {
 		newArr[i] = 'white';
 	}
@@ -16,6 +16,8 @@ let defaultState = {
 };
 const initialFillReducer = (state = defaultState.initialFill, action) => {
 	switch (action.type) {
+        case 'RESET_FILL_ARRAY':
+            return action.payload;
 		default:
 			return state;
 	}

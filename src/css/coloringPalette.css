@@ -30,7 +30,8 @@
                         "twentyeight twentynine thirty";
 	column-gap: 2%;
 	row-gap: 1%;
-	padding: 1%;
+    padding: 1%;
+    min-width: 100px;
 }
 
 .color1,

@@ -7,7 +7,7 @@ import LoginForm from './components/loginForm';
 import WelcomePage from './components/welcomePage';
 import SignupForm from './components/signupForm'
 import {findUserByToken} from './redux/actions/userActions'
-import SVGTest from './components/svgTest';
+import FoxSvg from './components/svgs/fox';
 
 const App = (props) => {
     useEffect(()=>{
@@ -23,7 +23,7 @@ const App = (props) => {
 				<Switch>
 					<Route path="/login" render={() => <LoginForm />} />
                     <Route path='/signup' render={() => <SignupForm />} />
-                    <Route path='/svg' render={() => <SVGTest />} />
+                    <Route path='/svg' render={() => <FoxSvg />} />
                     <Route path='/' render={() => <WelcomePage />}/>
 
 				</Switch>
