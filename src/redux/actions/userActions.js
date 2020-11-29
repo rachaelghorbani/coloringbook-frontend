@@ -12,7 +12,7 @@ export const loginSubmit = (user, history) => {
 		fetch('http://localhost:3000/login', options).then((resp) => resp.json()).then((returnedUser) => {
 			if (returnedUser.user) {
                 localStorage.setItem('token', returnedUser.jwt);
-                history.push('/svg')
+                history.push('/allimages')
 				return dispatch({ type: 'LOGIN_USER', payload: returnedUser.user });
 			} else {
 				return dispatch({ type: 'LOGIN_FAILED', payload: true });
@@ -33,7 +33,7 @@ export const findUserByToken = (history) => {
 				.then((resp) => resp.json())
 				.then((user) => {
 					if (user.user) {
-						history.push('/svg');
+						history.push('/allimages');
 						return dispatch({ type: 'LOGIN_FROM_TOKEN', payload: user.user });
 					} else {
 						history.push('/');
@@ -59,7 +59,7 @@ export const submitNewUser = (user, history) => {
         .then(resp => resp.json())
         .then(newUser => {
             if(newUser.user){
-                history.push('/home')
+                history.push('/allimages')
                 localStorage.setItem('token', newUser.jwt);
                 return dispatch({type: 'SIGNUP_USER', payload: newUser.user})
             }

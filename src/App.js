@@ -9,6 +9,7 @@ import SignupForm from './components/signupForm';
 import { findUserByToken } from './redux/actions/userActions';
 import FoxSvg from './components/svgs/fox';
 import AllImagesContainer from './containers/allImagesContainer';
+import ColoringPage from './components/coloringPage'
 
 const App = (props) => {
 	useEffect(() => {
@@ -24,6 +25,16 @@ const App = (props) => {
 			<NavBar />
 			<div className="main">
 				<Switch>
+                <Route path="/userimages/:id" render={({match}) => {
+                    if(props.user){
+                        const id = parseInt(match.params.id)
+                        const image = props.user.user_images.find(ui => ui.id === id)
+                        return(<ColoringPage image={image}/>)
+                    }else{
+                        props.history.push("/allimages")
+                    }
+                }}/>
+
 					<Route path="/login" render={() => <LoginForm />} />
 					<Route path="/signup" render={() => <SignupForm />} />
                     <Route path="/allimages" render={() => <AllImagesContainer />}/>
@@ -37,7 +48,8 @@ const App = (props) => {
 
 const mapStateToProps = (state) => {
 	return {
-		user: state.user
+        user: state.user,
+        currentImage: state.currentImage
 	};
 };
 const mapDispatchToProps = (dispatch) => {

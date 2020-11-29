@@ -3,7 +3,6 @@ const url = "http://localhost:3000/images/"
 export const fetchAllImages = () => {
     return function(dispatch){
         const token = localStorage.getItem("token")
-        console.log(token)
         const options = {
             method: 'GET',
             headers: {
@@ -17,3 +16,4 @@ export const fetchAllImages = () => {
         })
     }
 }
+
