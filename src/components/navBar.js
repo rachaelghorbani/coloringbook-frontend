@@ -25,6 +25,9 @@ const NavBar = (props) => {
 					<Link to="/puzzles">
 						<FontAwesomeIcon icon={faPuzzlePiece} />Puzzles
 					</Link>
+                    <Link to="/allimages">
+						<FontAwesomeIcon icon={faPuzzlePiece} />All Images
+					</Link>
 					<Link to="/" onClick={localLogout}>
 						<FontAwesomeIcon icon={faSignInAlt} flip="horizontal" />Logout
 					</Link>

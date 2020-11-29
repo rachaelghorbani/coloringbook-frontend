@@ -1,8 +1,25 @@
 .foxSvgContainer{
-   height: 80vh;
-    width: 50%;
-    position: absolute;
-    margin-right: 20%
+   height: 400px;
+    width: 300px;
+   
+    /* position: absolute;
+    margin-right: 20% */
+}
+.foxSvgThumbnailContainer{
+    height: 300px;
+}
+
+/* .foxSvgThumbnail{
+    overflow: visible;
+    transform: scale(.25); 
+    transform-origin: 8% 0%;
+    height: 270px
+} */
+.foxSvgThumbnail{
+    /* overflow: visible; */
+    transform: scale(.25); 
+    transform-origin: 8% 0%;
+    /* height: 270px */
 }
 
 .foxSvg{

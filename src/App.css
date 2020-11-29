@@ -22,6 +22,7 @@
 * {
 	box-sizing: border-box;
 }
+
 .App {
 	text-align: center;
 	height: 100%;
@@ -91,6 +92,8 @@
 }
 
 .loginContainer {
+    /* position: fixed;
+    top: 0; */
 	height: 100vh;
 	width: 100%;
 	margin: auto;
@@ -370,12 +373,15 @@ form label {
 }
 
 #particles-js{
-    width: 100vw;
-	margin: auto;
-	display: flex;
+  position: fixed; 
+	/* height: 100%;  */
+    /* width: 100%; */
+	/* margin: auto;
+    display: flex;
+   
 	align-items: center;
-	justify-content: center;
-    position: relative; 
+	justify-content: center; */
+    /* position: relative;  */
     height: 100vh;
     /* width: 100%; */
     /* display: flex;
