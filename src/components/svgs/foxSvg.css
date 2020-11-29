@@ -4,20 +4,22 @@
 }
 
 .foxSvgFullContainer{
-    height: 800px;
-
+    height: 100%;
+    width: 600px;
+    z-index: 1;
+    margin-left: -22% 
 }
 .svgElementThumbnail{
     height: 300px;
     width: 300px
 }
 .svgElementFull{
-    height: 800px;
-    width: 800px
+    height: 100%;
+    width: 600px;
 }
 .foxSvgFull{
-    transform: scale(.68); 
-    transform-origin: -8% 15%;
+    transform: scale(.67); 
+    transform-origin: -8% -5%;
 }
 /* .foxSvgThumbnail{
     overflow: visible;

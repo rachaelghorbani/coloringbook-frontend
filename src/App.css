@@ -94,6 +94,7 @@
 .loginContainer {
     /* position: fixed;
     top: 0; */
+    /* z-index: -1; */
 	height: 100vh;
 	width: 100%;
 	margin: auto;
@@ -374,7 +375,7 @@ form label {
 
 #particles-js{
   position: fixed; 
-  z-index: -1;
+  /* z-index: -1; */
 	/* height: 100%;  */
     /* width: 100%; */
 	/* margin: auto;

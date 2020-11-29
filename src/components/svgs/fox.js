@@ -1,8 +1,6 @@
 import React from 'react'
-import ParticlesBackground from '../particlesBackground';
 import './foxSvg.css'
 import {connect} from 'react-redux'
-import ColoringPalette from '../coloringPalette';
 import {resetFillArray} from '../../redux/actions/coloringActions'
 
 const FoxSvg = (props) => {
