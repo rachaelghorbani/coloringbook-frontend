@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 
-const initialFill = () => {
-	let newArr = new Array(688);
-	for (let i = 0; i < newArr.length; i++) {
-		newArr[i] = 'white';
-	}
-	return newArr;
-};
+// const initialFill = () => {
+// 	let newArr = new Array(688);
+// 	for (let i = 0; i < newArr.length; i++) {
+// 		newArr[i] = 'white';
+// 	}
+// 	return newArr;
+// };
 
 let defaultState = {
 	user: null,
@@ -14,17 +14,17 @@ let defaultState = {
 	loginFailed: false,
 	// initialFill: initialFill(),
 	currentColor: 'white',
-	currentImage: {}
+	// currentImage: {}
 };
 
-const currentImageReducer = (state = defaultState.currentImage, action) => {
-	switch (action.type) {
-		case 'SET_CURRENT_IMAGE':
-			return action.payload;
-		default:
-			return state;
-	}
-};
+// const currentImageReducer = (state = defaultState.currentImage, action) => {
+// 	switch (action.type) {
+// 		case 'SET_CURRENT_IMAGE':
+// 			return action.payload;
+// 		default:
+// 			return state;
+// 	}
+// };
 const allImagesReducer = (state = defaultState.allImages, action) => {
 	switch (action.type) {
 		case 'FETCH_ALL_IMAGES':
@@ -85,7 +85,7 @@ let rootReducer = combineReducers({
 	loginFailed: loginFailedReducer,
 	// initialFill: initialFillReducer,
 	currentColor: currentColorReducer,
-	currentImage: currentImageReducer
+	// currentImage: currentImageReducer
 });
 
 export default rootReducer;
