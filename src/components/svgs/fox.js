@@ -7,9 +7,13 @@ const FoxSvg = (props) => {
     //going to need a coloring page where this is displayed full screen with the palette
 
     const changeFill = (index) => {
+        if(props.size === "Full"){
+            console.log(index)
+
         const newFill = props.fillColors.slice(0)
         newFill[index] = props.currentColor
         props.resetFillArray(newFill, props.image.id)
+        }
     }
 
     // each path will be set to an index of a very long array where each index is a color ex fill=`props.fillcolors[1]`
@@ -872,7 +876,7 @@ xmlns="http://www.w3.org/2000/svg" className={`svgElement${props.size}`}
 }
 const mapStateToProps = state => {
     return {
-        initialFill: state.initialFill,
+        // initialFill: state.initialFill,
         currentColor: state.currentColor
     }
 }

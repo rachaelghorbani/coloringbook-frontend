@@ -25,15 +25,30 @@ const ImageCard = (props) => {
         //when doing the route for this, will basically need to do the same thing as here with the components. Should have access to this from userImage(userImage.image.component)
     }
 
+    const editImage = () => {
+
+        props.history.push(`/userimages/${props.image.id}`)
+        console.log(props.image.id)
+    }
+
     const Svg = components[props.image.component];
 	return (
 		<div className={`imageCardDiv${props.image.component}`}>
 			<div>
 				<h3 style={{ marginBottom: 0 }}>{props.image.title}</h3>
 			</div>
-			<Svg size="Thumbnail" />
+			{props.fillColors ?
+                <Svg size="Thumbnail" fillColors={props.fillColors}/>
+                :
+                <Svg size="Thumbnail" />
+                }
 			<div>
-				<button onClick={createImage}className="colorButton">Color Me!</button>
+                {props.fillColors ?
+                <button onClick={editImage}className="colorButton">View Image!</button> 
+                :
+                <button onClick={createImage}className="colorButton">Color Me!</button>
+            }
+				
 			</div>
 		</div>
 	);

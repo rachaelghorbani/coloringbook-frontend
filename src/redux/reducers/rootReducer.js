@@ -12,7 +12,7 @@ let defaultState = {
 	user: null,
 	allImages: [],
 	loginFailed: false,
-	initialFill: initialFill(),
+	// initialFill: initialFill(),
 	currentColor: 'white',
 	currentImage: {}
 };
@@ -33,14 +33,14 @@ const allImagesReducer = (state = defaultState.allImages, action) => {
 			return state;
 	}
 };
-const initialFillReducer = (state = defaultState.initialFill, action) => {
-	switch (action.type) {
-		case 'RESET_FILL_ARRAY':
-			return action.payload;
-		default:
-			return state;
-	}
-};
+// const initialFillReducer = (state = defaultState.initialFill, action) => {
+// 	switch (action.type) {
+// 		case 'RESET_FILL_ARRAY':
+// 			return action.payload;
+// 		default:
+// 			return state;
+// 	}
+// };
 const currentColorReducer = (state = defaultState.currentColor, action) => {
 	switch (action.type) {
 		case 'SET_CURRENT_COLOR':
@@ -83,7 +83,7 @@ let rootReducer = combineReducers({
 	user: userReducer,
 	allImages: allImagesReducer,
 	loginFailed: loginFailedReducer,
-	initialFill: initialFillReducer,
+	// initialFill: initialFillReducer,
 	currentColor: currentColorReducer,
 	currentImage: currentImageReducer
 });

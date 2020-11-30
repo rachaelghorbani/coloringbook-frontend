@@ -26,6 +26,7 @@ export const createUserImage = (userImageObj, history) => {
 
 export const resetFillArray = (newFillArray, id) => {
     return function(dispatch, getState){
+        console.log('in action')
         const token = localStorage.getItem("token")
         const options = {
             method: 'PATCH',
@@ -39,26 +40,36 @@ export const resetFillArray = (newFillArray, id) => {
 
         fetch(URL + id, options)
         .then(resp => resp.json())
-        .then(updatedUserImage => {
-            console.log(updatedUserImage)
+        .then(updatedUserImage => { 
+            // const expenses = getState().user.expenses;
+            // const oldExpense = expenses.find((ex) => ex.id === id);
+
+            // const index = expenses.indexOf(oldExpense);
+            // expenses[index] = updatedExpense;
+            // const newArr = {
+            //     ...getState().user,
+            //     expenses: expenses
+            // };
+            const userImages = getState().user.user_images
+            const oldImage = userImages.find(ui => ui.id === id)
+            const index = userImages.indexOf(oldImage)
+            const newImage = {...oldImage, fill_colors: newFillArray}
+            userImages[index] = newImage
+            //need to change the fill array of the oldImage
+            // const userImages = [...getState().user.user_images]
+            // console.log(userImages)
+            // const newFillArr = [...oldImage.fill_colors]
+            // console.log(newFillArr)
+            // userImages[index] = newFillArr
+            // newFillArr.fill_colors = newFillArray
+
+            const updatedUser = {...getState().user, user_images: userImages}
+            // console.log(updatedUser)
+    
+            return dispatch({type: 'UPDATE_IMAGE_FILL', payload: updatedUser})
         })
         //reset user with newFillArray
         //
-        const userImage = getState().user.user_images.find(ui => ui.id === id)
-        const userImages = getState().user.user_images
-        const index = userImages.indexOf(userImage)
-        userImage.fill_colors = newFillArray
-        userImages[index] = userImage
-        console.log(userImages)
-        // console.log({...getState().user, user_images: updatedUserImagesArray})
-        console.log(getState().user)
-        // userImage.fill_colors = newFillArray
-        //now need to update the user
-        const updatedUser = {...getState().user, user_images: userImages}
-        console.log(updatedUser)
-
-        // console.log(userImage)
-        // fill[index] = currentColor
-        return dispatch({type: 'UPDATE_IMAGE_FILL', payload: updatedUser})
+       
     }
 }

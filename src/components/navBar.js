@@ -22,8 +22,8 @@ const NavBar = (props) => {
 					<Link to="/">
 						<FontAwesomeIcon icon={faHome} />Home
 					</Link>
-					<Link to={`/userimages/${35}`}>
-						<FontAwesomeIcon icon={faPuzzlePiece} />Puzzles
+					<Link to='/myimages'>
+						<FontAwesomeIcon icon={faPuzzlePiece} />My Images
 					</Link>
                     <Link to="/allimages">
 						<FontAwesomeIcon icon={faPuzzlePiece} />All Images
