@@ -17,7 +17,7 @@ const ColoringPage = (props) => {
 		<div className="loginContainer">
 			<ParticlesBackground />
 			<ColoringPalette />
-            <Svg size="Full" fillColors={props.image.fill_colors}/>
+            <Svg size="Full" fillColors={props.image.fill_colors} image={props.image}/>
 		</div>
 	);
 };

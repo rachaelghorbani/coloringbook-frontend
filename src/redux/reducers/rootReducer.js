@@ -13,18 +13,18 @@ let defaultState = {
 	allImages: [],
 	loginFailed: false,
 	initialFill: initialFill(),
-    currentColor: 'white',
-    currentImage: {}
+	currentColor: 'white',
+	currentImage: {}
 };
 
 const currentImageReducer = (state = defaultState.currentImage, action) => {
-    switch(action.type){
-        case 'SET_CURRENT_IMAGE':
-            return action.payload;
-        default:
-            return state
-    }
-}
+	switch (action.type) {
+		case 'SET_CURRENT_IMAGE':
+			return action.payload;
+		default:
+			return state;
+	}
+};
 const allImagesReducer = (state = defaultState.allImages, action) => {
 	switch (action.type) {
 		case 'FETCH_ALL_IMAGES':
@@ -58,9 +58,11 @@ const userReducer = (state = defaultState.user, action) => {
 		case 'LOGIN_FROM_TOKEN':
 			return action.payload;
 		case 'SIGNUP_USER':
-            return action.payload;
-            case 'CREATE_USER_IMAGE':
-                return action.payload;
+			return action.payload;
+		case 'CREATE_USER_IMAGE':
+			return action.payload;
+		case 'UPDATE_IMAGE_FILL':
+			return action.payload;
 		default:
 			return state;
 	}
@@ -78,12 +80,12 @@ const loginFailedReducer = (state = defaultState.loginFailed, action) => {
 };
 
 let rootReducer = combineReducers({
-    user: userReducer,
-    allImages: allImagesReducer,
+	user: userReducer,
+	allImages: allImagesReducer,
 	loginFailed: loginFailedReducer,
 	initialFill: initialFillReducer,
-    currentColor: currentColorReducer,
-    currentImage: currentImageReducer
+	currentColor: currentColorReducer,
+	currentImage: currentImageReducer
 });
 
 export default rootReducer;

@@ -23,3 +23,42 @@ export const createUserImage = (userImageObj, history) => {
         })
     }
 }
+
+export const resetFillArray = (newFillArray, id) => {
+    return function(dispatch, getState){
+        const token = localStorage.getItem("token")
+        const options = {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify({fill_colors: newFillArray})
+        }
+
+        fetch(URL + id, options)
+        .then(resp => resp.json())
+        .then(updatedUserImage => {
+            console.log(updatedUserImage)
+        })
+        //reset user with newFillArray
+        //
+        const userImage = getState().user.user_images.find(ui => ui.id === id)
+        const userImages = getState().user.user_images
+        const index = userImages.indexOf(userImage)
+        userImage.fill_colors = newFillArray
+        userImages[index] = userImage
+        console.log(userImages)
+        // console.log({...getState().user, user_images: updatedUserImagesArray})
+        console.log(getState().user)
+        // userImage.fill_colors = newFillArray
+        //now need to update the user
+        const updatedUser = {...getState().user, user_images: userImages}
+        console.log(updatedUser)
+
+        // console.log(userImage)
+        // fill[index] = currentColor
+        return dispatch({type: 'UPDATE_IMAGE_FILL', payload: updatedUser})
+    }
+}

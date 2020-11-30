@@ -22,7 +22,7 @@ const NavBar = (props) => {
 					<Link to="/">
 						<FontAwesomeIcon icon={faHome} />Home
 					</Link>
-					<Link to={`/userimages/${1}`}>
+					<Link to={`/userimages/${35}`}>
 						<FontAwesomeIcon icon={faPuzzlePiece} />Puzzles
 					</Link>
                     <Link to="/allimages">
