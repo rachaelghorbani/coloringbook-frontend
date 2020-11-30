@@ -3,7 +3,7 @@ import { fetchAllImages } from '../redux/actions/imageActions';
 import { connect } from 'react-redux';
 import ImageCard from '../components/imageCard';
 import ParticlesBackground from '../components/particlesBackground';
-import './allImages.css';
+import '../css/allImages.css'
 
 const AllImagesContainer = (props) => {
 	useEffect(() => {

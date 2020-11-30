@@ -1,8 +1,8 @@
 import React from 'react';
-import './imageCard.css';
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {createUserImage} from '../redux/actions/userImageActions'
+import '../css/imageCard.css'
 
 import FoxSvg from './svgs/fox';
 

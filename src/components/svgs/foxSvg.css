@@ -29,8 +29,8 @@
 } */
 .foxSvgThumbnail{
     /* overflow: visible; */
-    transform: scale(.25); 
-    transform-origin: 8% 0%;
+    transform: scale(.27); 
+    transform-origin: 10% 0%;
     /* height: 270px */
 }
 
