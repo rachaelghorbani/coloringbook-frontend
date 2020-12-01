@@ -14,13 +14,17 @@ const UserImagesContainer = props => {
     }
     console.log(props.user)
     return (
+ 
         <div className="loginContainer">
 			<ParticlesBackground />
-			<h1 style={{ position: 'absolute', top: 0 }}>{`${props.user.username}'s Images`}</h1>
+			<h1 className="userImagesHeader">{`${props.user.username}'s Images`}</h1>
 			<div className="cardContainer">
                 {renderUserImages()}
                 </div>
-		</div>
+        </div>
+     
+       
+    
     )
 }
 

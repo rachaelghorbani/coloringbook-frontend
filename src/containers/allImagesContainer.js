@@ -24,7 +24,7 @@ const AllImagesContainer = (props) => {
 	return (
 		<div className="loginContainer">
 			<ParticlesBackground />
-			<h1 style={{ position: 'absolute', top: 0 }}>Select An Image to Color</h1>
+			<h1 className='selectImageHeader'>Select An Image to Color</h1>
 			<div className="cardContainer">
                 {renderImages()}
                 </div>

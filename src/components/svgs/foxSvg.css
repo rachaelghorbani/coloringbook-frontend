@@ -41,9 +41,19 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .foxSvg{
-        transform: scale(.465); 
-        transform-origin: -55% 20%;
+    .foxSvgFull{
+        transform: scale(.51); 
+        transform-origin: 42% -1%;
 
+    }
+    /* .svgElementFull{
+        height: 77%;
+        position: absolute;
+        bottom: 0
+    } */
+    .foxSvgFullContainer{
+        height: 77%;
+        position: absolute;
+        bottom: 0
     }
 }

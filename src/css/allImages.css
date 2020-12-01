@@ -15,11 +15,7 @@
     overflow: auto
     /* overflow-y: scroll; */
 }
-/* @media only screen and (max-width: 768px) {
-    .cardContainer{
 
-    }
-} */
 .cardContainer::-webkit-scrollbar {
     display: none;
   }
@@ -27,4 +23,18 @@
 .cardContainerHeader{
 /* grid-area: 1 / 1 / 2 / 4; */
 margin: auto;
+}
+.selectImageHeader, .userImagesHeader{
+    position: absolute;
+    top: 0
+}
+
+
+@media only screen and (max-width: 768px) {
+    .cardContainer{
+        height: 75%;
+    }
+    .selectImageHeader, .userImagesHeader{
+        top: 100px
+    }
 }

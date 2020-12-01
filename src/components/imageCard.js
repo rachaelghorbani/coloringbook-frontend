@@ -7,8 +7,9 @@ import '../css/imageCard.css'
 import FoxSvg from './svgs/fox';
 
 const ImageCard = (props) => {
+    //need to make first foxSvg string
 	const components = {
-		FoxSvg: FoxSvg
+		"FoxSvg": FoxSvg
     };
     const createImage = () => {
         const userImageObj = {

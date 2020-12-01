@@ -31,18 +31,18 @@ const ColoringPalette = (props) => {
 		'orange',
 		'aquamarine',
 		'salmon',
-		'lightpink',
+		'navy',
 		'lightseagreen',
 		'rosybrown',
 		'lightgray'
 	];
 
-	useEffect(
-		() => {
-			makePalette();
-		},
-		[ props.currentColor ]
-	);
+	// useEffect(
+	// 	() => {
+	// 		makePalette();
+	// 	},
+	// 	[ props.currentColor ]
+	// );
 
 	const setColor = (color) => {
 		props.setCurrentColor(color);
