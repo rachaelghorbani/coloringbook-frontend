@@ -31,6 +31,9 @@ const NavBar = (props) => {
 					<Link to="/" onClick={localLogout}>
 						<FontAwesomeIcon icon={faSignInAlt} flip="horizontal" />Logout
 					</Link>
+                    <Link to="/squirrel" >
+						<FontAwesomeIcon icon={faSignInAlt} flip="horizontal" />Squirrel
+					</Link>
 				</>
 			);
 		} else {

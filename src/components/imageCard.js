@@ -11,6 +11,7 @@ const ImageCard = (props) => {
 	const components = {
 		"FoxSvg": FoxSvg
     };
+    
     const createImage = () => {
         const userImageObj = {
             user_id: props.user.id,

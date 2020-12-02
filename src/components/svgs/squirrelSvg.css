@@ -1,0 +1,59 @@
+
+.squirrelSvgThumbnailContainer{
+    height: 300px;
+}
+
+.squirrelSvgFullContainer{
+    height: 100%;
+    width: 650px;
+    z-index: 1;
+    margin-left: -25% 
+}
+.svgElementThumbnail{
+    height: 300px;
+    width: 300px
+}
+.svgElementFull{
+    height: 100%;
+    width: 650px;
+}
+.squirrelSvgFull{
+    transform: scale(.61); 
+    transform-origin: -1% 20%;
+}
+/* .squirrelSvgThumbnail{
+    overflow: visible;
+    transform: scale(.25); 
+    transform-origin: 8% 0%;
+    height: 270px
+} */
+.squirrelSvgThumbnail{
+    /* overflow: visible; */
+    transform: scale(.27); 
+    transform-origin: 10% 0%;
+    /* height: 270px */
+}
+
+.squirrelSvg{
+    overflow: visible;
+    transform: scale(.665); 
+    transform-origin: -450px -250px;
+}
+
+@media only screen and (max-width: 768px) {
+    .squirrelSvgFull{
+        transform: scale(.51); 
+        transform-origin: 42% -1%;
+
+    }
+    /* .svgElementFull{
+        height: 77%;
+        position: absolute;
+        bottom: 0
+    } */
+    .squirrelSvgFullContainer{
+        height: 77%;
+        position: absolute;
+        bottom: 0
+    }
+}

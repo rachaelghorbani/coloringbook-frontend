@@ -11,6 +11,7 @@ import { findUserByToken } from './redux/actions/userActions';
 import AllImagesContainer from './containers/allImagesContainer';
 import ColoringPage from './components/coloringPage'
 import UserImagesContainer from './containers/userImagesContainer'
+import SquirrelSvg from './components/svgs/squirrel';
 const App = (props) => {
 	useEffect(() => {
         props.findUserByToken(props.history);
@@ -43,7 +44,7 @@ const App = (props) => {
 					<Route path="/signup" render={() => <SignupForm />} />
                     <Route path="/allimages" render={() => <AllImagesContainer />}/>
                     <Route path="/myimages" render={() => <UserImagesContainer />}/>
-					{/* <Route path="/svg" render={() => <FoxSvg />} /> */}
+					<Route path="/squirrel" render={() => <SquirrelSvg size="Full"/>} />
 					<Route path="/" render={() => <WelcomePage />} />
 				</Switch>
 			</div>
