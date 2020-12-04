@@ -7,7 +7,7 @@ const FoxSvg = (props) => {
     //going to need a coloring page where this is displayed full screen with the palette
 
     const changeFill = (index) => {
-        if(props.size === "Full"){
+        if(props.size === "Full" && !props.display){
             console.log(index)
 
         const newFill = props.fillColors.slice(0)

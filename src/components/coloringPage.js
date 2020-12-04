@@ -4,11 +4,12 @@ import ParticlesBackground from './particlesBackground'
 import ColoringPalette from './coloringPalette'
 import {setCurrentColor} from '../redux/actions/coloringActions'
 import {connect} from 'react-redux'
+import {components} from './componentList'
 
 const ColoringPage = (props) => {
-    const components = {
-        "FoxSvg" : FoxSvg
-    }
+    // const components = {
+    //     "FoxSvg" : FoxSvg
+    // }
 
     useEffect(()=>{
         return ()=>{

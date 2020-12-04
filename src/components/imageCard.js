@@ -7,6 +7,7 @@ import '../css/imageCard.css'
 import FoxSvg from './svgs/fox';
 
 const ImageCard = (props) => {
+    //props.image is the userimage instance
     //need to make first foxSvg string
 	const components = {
 		"FoxSvg": FoxSvg
@@ -27,9 +28,9 @@ const ImageCard = (props) => {
         //when doing the route for this, will basically need to do the same thing as here with the components. Should have access to this from userImage(userImage.image.component)
     }
 
-    const editImage = () => {
+    const redirectToFocusPage = () => {
 
-        props.history.push(`/userimages/${props.image.id}`)
+        props.history.push(`/focusimage/${props.image.id}`)
         console.log(props.image.id)
     }
 
@@ -46,7 +47,7 @@ const ImageCard = (props) => {
                 }
 			<div>
                 {props.fillColors ?
-                <button onClick={editImage}className="colorButton">View Image!</button> 
+                <button onClick={redirectToFocusPage}className="colorButton">View Image!</button> 
                 :
                 <button onClick={createImage}className="colorButton">Color Me!</button>
             }

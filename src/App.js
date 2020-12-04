@@ -12,6 +12,7 @@ import AllImagesContainer from './containers/allImagesContainer';
 import ColoringPage from './components/coloringPage'
 import UserImagesContainer from './containers/userImagesContainer'
 import SquirrelSvg from './components/svgs/squirrel';
+import FocusImagePage from './components/focusImagePage'
 const App = (props) => {
 	useEffect(() => {
         props.findUserByToken(props.history);
@@ -39,6 +40,14 @@ const App = (props) => {
                         props.history.push("/allimages")
                     }
                 }}/>
+                    <Route path="/focusimage/:id" render={({match}) => {
+                        const id = parseInt(match.params.id)
+                        const image = props.user.user_images.find(ui => ui.id === id)
+                        return(
+                        <FocusImagePage image={image}/>
+                        )
+                    }
+                } />
 
 					<Route path="/login" render={() => <LoginForm />} />
 					<Route path="/signup" render={() => <SignupForm />} />
