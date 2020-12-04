@@ -13,7 +13,7 @@ let defaultState = {
 	allImages: [],
 	loginFailed: false,
 	// initialFill: initialFill(),
-	currentColor: 'white',
+	currentColor: 'white'
 	// currentImage: {}
 };
 
@@ -63,6 +63,8 @@ const userReducer = (state = defaultState.user, action) => {
 			return action.payload;
 		case 'UPDATE_IMAGE_FILL':
 			return action.payload;
+		case 'DELETE_USER_IMAGE':
+			return action.payload;
 		default:
 			return state;
 	}
@@ -84,7 +86,7 @@ let rootReducer = combineReducers({
 	allImages: allImagesReducer,
 	loginFailed: loginFailedReducer,
 	// initialFill: initialFillReducer,
-	currentColor: currentColorReducer,
+	currentColor: currentColorReducer
 	// currentImage: currentImageReducer
 });
 

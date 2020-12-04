@@ -1,0 +1,25 @@
+.focusImageButtonContainer{
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: 1fr;
+    /* grid-template-rows: repeat(3, 1fr); */
+
+    position: fixed;
+    right: 5% 
+}
+.focusImageButtons{
+    background-color: white;
+    border: 1px solid gray;
+    margin: 10px;
+    color: gray;
+    outline: none;
+    height: 50px;
+    width: 150px;
+    border-radius: 4px;
+    font-size: .9em;
+    cursor: pointer
+}
+
+.focusImageButtons:hover{
+    transform: scale(1.1)
+}

@@ -51,3 +51,29 @@ export const resetFillArray = (newFillArray, id) => {
         })
     }
 }
+
+export const deleteUserImage = (id, history) => {
+    return function(dispatch, getState){
+        const token = localStorage.getItem("token")
+        const options = {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        }
+   
+
+        fetch(URL + id, options)
+        .then(resp => resp.json())
+        .then(deleteUI => {
+            const userImages = [...getState().user.user_images]
+            const filteredUserImages = userImages.filter(ui => ui.id !== id)
+            const updatedUser = {...getState().user, user_images: filteredUserImages}
+            history.push("/myimages")
+            return dispatch({type: "DELETE_USER_IMAGE", payload: updatedUser})
+        })
+
+    }
+}
