@@ -1,4 +1,7 @@
 import FoxSvg from './svgs/fox'
+import SquirrelSvg from './svgs/squirrel';
+
 export const components = {
-    "FoxSvg": FoxSvg
+    "FoxSvg": FoxSvg,
+    "SquirrelSvg": SquirrelSvg
 };

@@ -9,11 +9,11 @@
     z-index: 1;
     margin-left: -22% 
 }
-.svgElementThumbnail{
+.svgElementThumbnailFox{
     height: 300px;
     width: 300px
 }
-.svgElementFull{
+.svgElementFullFox{
     height: 100%;
     width: 600px;
 }

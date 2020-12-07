@@ -23,3 +23,15 @@
 .focusImageButtons:hover{
     transform: scale(1.1)
 }
+
+@media only screen and (max-width: 768px) {
+    .focusImageButtonContainer{
+        flex-direction: row;
+        position: fixed;
+        top: 15%;
+        right: auto
+    }
+    .focusImageButtons{
+        width:120px
+    }
+}

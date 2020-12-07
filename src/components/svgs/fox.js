@@ -39,7 +39,7 @@ const FoxSvg = (props) => {
            
 <svg 
 // className={props.thumbnail ? 'foxSvgThumbnail':'foxSvg'} 
-xmlns="http://www.w3.org/2000/svg" className={`svgElement${props.size}`} 
+xmlns="http://www.w3.org/2000/svg" className={`svgElement${props.size}Fox`} 
 
 // style={{overflow: 'visible'}} width="100%" height="100%" viewBox="150 100 600.000000 850.000000"
 //  preserveAspectRatio="xMidYMid meet"

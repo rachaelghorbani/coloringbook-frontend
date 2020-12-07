@@ -5,21 +5,21 @@
 
 .squirrelSvgFullContainer{
     height: 100%;
-    width: 650px;
+    width: 750px;
     z-index: 1;
     margin-left: -25% 
 }
-.svgElementThumbnail{
+.svgElementThumbnailSquirrel{
     height: 300px;
     width: 300px
 }
-.svgElementFull{
+.svgElementFullSquirrel{
     height: 100%;
-    width: 650px;
+    width: 750px;
 }
 .squirrelSvgFull{
-    transform: scale(.61); 
-    transform-origin: -1% 20%;
+    transform: scale(.71); 
+    transform-origin: 5% 5%;
 }
 /* .squirrelSvgThumbnail{
     overflow: visible;
@@ -29,8 +29,8 @@
 } */
 .squirrelSvgThumbnail{
     /* overflow: visible; */
-    transform: scale(.27); 
-    transform-origin: 10% 0%;
+    transform: scale(.28); 
+    transform-origin: 1% 5%;
     /* height: 270px */
 }
 
@@ -42,8 +42,8 @@
 
 @media only screen and (max-width: 768px) {
     .squirrelSvgFull{
-        transform: scale(.51); 
-        transform-origin: 42% -1%;
+        transform: scale(.48); 
+        transform-origin: 47% 20%;
 
     }
     /* .svgElementFull{
@@ -53,7 +53,7 @@
     } */
     .squirrelSvgFullContainer{
         height: 77%;
-        position: absolute;
-        bottom: 0
+        /* position: absolute;
+        bottom: 0 */
     }
 }

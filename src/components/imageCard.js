@@ -3,15 +3,18 @@ import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {createUserImage} from '../redux/actions/userImageActions'
 import '../css/imageCard.css'
+import {components} from './componentList'
 
 import FoxSvg from './svgs/fox';
+import SquirrelSvg from './svgs/squirrel'
 
 const ImageCard = (props) => {
     //props.image is the userimage instance
     //need to make first foxSvg string
-	const components = {
-		"FoxSvg": FoxSvg
-    };
+	// const components = {
+    //     "FoxSvg": FoxSvg,
+    //     "SquirrelSvg": SquirrelSvg
+    // };
     
     const createImage = () => {
         const userImageObj = {
@@ -36,7 +39,9 @@ const ImageCard = (props) => {
 
     const Svg = components[props.image.component];
 	return (
-		<div className={`imageCardDiv${props.image.component}`}>
+        // had this as `.imageCardDiv${props.image.component}{
+
+		<div className="imageCardDiv">
 			<div>
 				<h3 style={{ marginBottom: 0 }}>{props.image.title}</h3>
 			</div>

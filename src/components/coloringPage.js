@@ -13,9 +13,10 @@ const ColoringPage = (props) => {
 
     useEffect(()=>{
         return ()=>{
-            setCurrentColor("white")
+            props.setCurrentColor("white")
         }
     }, [])
+    
     const Svg = components[props.image.component]
     //for the thumbnails there will need to be an initial fill of white since they technically dont exist yet. User thumbnails will need to use their own fill.
     //so maybe if the svg has a fill colors props, use that, otherwise use the initialfill array
