@@ -272,6 +272,23 @@ form label {
 	grid-area: 4 / 1 / 5 / 2;
 	margin: auto;
 }
+#particles-js{
+    position: fixed; 
+    /* z-index: -1; */
+      /* height: 100%;  */
+      /* width: 100%; */
+      /* margin: auto;
+      display: flex;
+     
+      align-items: center;
+      justify-content: center; */
+      /* position: relative;  */
+      height: 100vh;
+      width: 85%;
+      /* display: flex;
+      /* align-items: center;
+      justify-content: center; */
+  }
 @keyframes shake {
 	10%,
 	90% {
@@ -352,6 +369,10 @@ form label {
     .username, .password{
         margin: 10px 0 10px 0;
     }
+    #particles-js{
+        width: 100%;
+        height: calc(100vh - 100px)
+    }
 
   
 }
@@ -373,23 +394,7 @@ form label {
 	animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 1000ms steps(44) infinite normal;
 }
 
-#particles-js{
-  position: fixed; 
-  /* z-index: -1; */
-	/* height: 100%;  */
-    /* width: 100%; */
-	/* margin: auto;
-    display: flex;
-   
-	align-items: center;
-	justify-content: center; */
-    /* position: relative;  */
-    height: 100vh;
-    width: 90%;
-    /* display: flex;
-    /* align-items: center;
-    justify-content: center; */
-}
+
 
 @keyframes typewriter {
 	from {

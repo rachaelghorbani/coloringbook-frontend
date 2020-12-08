@@ -1,11 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import '../css/coloringPalette.css';
 import { connect } from 'react-redux';
 import { setCurrentColor } from '../redux/actions/coloringActions';
+import { ChromePicker } from 'react-color';
 
 const ColoringPalette = (props) => {
-    //want another row with a button to select custom color that will take up two cols and a color box for the custom color initially set to white or whatever the default picker returns. 
-    //onClick want a user to select a color, make the background of the box that color using the hex code it returns, and set current color color the same way as all the other boxes. Will probably need local state here to store the selected color so that it can be passed as the background color every time the user selects a diff color
+	const [ customColor, setCustomColor ] = useState('#ffffff');
+	const [ displayCustomColorPicker, setDisplayCustomColorPicker ] = useState(false);
+	//want another row with a button to select custom color that will take up two cols and a color box for the custom color initially set to white or whatever the default picker returns.
+	//onClick want a user to select a color, make the background of the box that color using the hex code it returns, and set current color color the same way as all the other boxes. Will probably need local state here to store the selected color so that it can be passed as the background color every time the user selects a diff color
 	const colors = [
 		'aqua',
 		'blue',
@@ -36,8 +39,9 @@ const ColoringPalette = (props) => {
 		'navy',
 		'lightseagreen',
 		'rosybrown',
-        'lightgray'
-        //state.customColor can go here and then that will get passed in when creating the palette
+		'lightgray',
+		customColor
+		//state.customColor can go here and then that will get passed in when creating the palette
 	];
 
 	// useEffect(
@@ -48,7 +52,7 @@ const ColoringPalette = (props) => {
 	// );
 
 	const setColor = (color) => {
-		props.setCurrentColor(color);
+        props.setCurrentColor(color);
 	};
 
 	const makePalette = () => {
@@ -63,12 +67,26 @@ const ColoringPalette = (props) => {
 				/>
 			);
 		});
-	};
+    };
+    
+    const handleChange = (color, e) => {
+        console.log(color.hex)
+        props.setCurrentColor(color.hex)
+        setCustomColor(color.hex)
+    }
+    console.log(props.currentColor)
 	return (
-        <div className="colorPalette">
-            {makePalette()}
-        </div>
-        )
+		<div className="colorPalette">
+			<button onClick={() => setDisplayCustomColorPicker(!displayCustomColorPicker)}>Select Custom Color</button>
+			{displayCustomColorPicker ? (
+				<div className="popover">
+					<div className="cover" onClick={() => setDisplayCustomColorPicker(false)} />
+					<ChromePicker  color={customColor}onChange={handleChange}/>
+				</div>
+			) : null}
+			{makePalette()}
+		</div>
+	);
 };
 
 const mapStateToProps = (state) => {
