@@ -18,8 +18,8 @@
     width: 750px;
 }
 .rabbitSvgFull{
-    transform: scale(.65); 
-    transform-origin: 5% 5%;
+    transform: scale(.68); 
+    transform-origin: 23% 0%;
 }
 /* .rabbitSvgThumbnail{
     overflow: visible;
@@ -30,16 +30,16 @@
 .rabbitSvgThumbnail{
     /* overflow: visible; */
     transform: scale(.28); 
-    transform-origin: 1% 5%;
+    transform-origin: 6% -1%;
     /* height: 270px */
 }
 
-.rabbitSvg{
+/* .rabbitSvg{
     overflow: visible;
     transform: scale(.665); 
     transform-origin: -450px -250px;
     
-}
+} */
 
 @media only screen and (max-width: 768px) {
     .rabbitSvgFull{
