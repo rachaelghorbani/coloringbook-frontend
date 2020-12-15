@@ -43,7 +43,7 @@ const allImagesReducer = (state = defaultState.allImages, action) => {
 // };
 const currentColorReducer = (state = defaultState.currentColor, action) => {
 	switch (action.type) {
-		case 'SET_CURRENT_COLOR':
+		case 'SET_CURRENT_COLOR': 
 			return action.payload;
 		default:
 			return state;

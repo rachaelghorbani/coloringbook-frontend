@@ -1,0 +1,60 @@
+
+.rabbitSvgThumbnailContainer{
+    height: 300px;
+}
+
+.rabbitSvgFullContainer{
+    height: 100%;
+    width: 750px;
+    z-index: 1;
+    margin-left: -25% 
+}
+.svgElementThumbnailRabbit{
+    height: 300px;
+    width: 300px
+}
+.svgElementFullRabbit{
+    height: 100%;
+    width: 750px;
+}
+.rabbitSvgFull{
+    transform: scale(.65); 
+    transform-origin: 5% 5%;
+}
+/* .rabbitSvgThumbnail{
+    overflow: visible;
+    transform: scale(.25); 
+    transform-origin: 8% 0%;
+    height: 270px
+} */
+.rabbitSvgThumbnail{
+    /* overflow: visible; */
+    transform: scale(.28); 
+    transform-origin: 1% 5%;
+    /* height: 270px */
+}
+
+.rabbitSvg{
+    overflow: visible;
+    transform: scale(.665); 
+    transform-origin: -450px -250px;
+    
+}
+
+@media only screen and (max-width: 768px) {
+    .rabbitSvgFull{
+        transform: scale(.48); 
+        transform-origin: 47% 20%;
+
+    }
+    /* .svgElementFull{
+        height: 77%;
+        position: absolute;
+        bottom: 0
+    } */
+    .rabbitSvgFullContainer{
+        height: 77%;
+        /* position: absolute;
+        bottom: 0 */
+    }
+}

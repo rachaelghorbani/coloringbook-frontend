@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { logoutUser } from '../redux/actions/userActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,29 +9,49 @@ import { connect } from 'react-redux';
 const NavBar = (props) => {
 	const localLogout = () => {
         localStorage.removeItem('token')
-		props.logoutUser();
+        props.logoutUser();
+        setNavExpand(false)
 	};
 
-	const [ navExpand, setNavExpand ] = useState(false);
+    const [navExpand, setNavExpand ] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
+ 
+    // sets an event listener for window resize, but only resets the windowWidth, thereby rerendering the component, if the width has changed, NOT the height. Don't need to listen to height changes
+
+    useEffect(()=>{
+        const handleResize = () => {
+            if(windowWidth !== window.innerWidth){
+                setWindowWidth(window.innerWidth)
+                console.log(windowWidth)
+            }
+        }
+        window.addEventListener('resize', handleResize)
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+
+    })
+ 
+    
 	//have a button that when clicked extends the background and has a list of nav icons
 	const linksToShow = () => {
 		if (props.user) {
 			return (
 				<>
-					<Link to="/">
+					<Link to="/" onClick={() => setNavExpand(false)}>
 						<FontAwesomeIcon icon={faHome} />Home
 					</Link>
-					<Link to='/myimages'>
+					<Link to='/myimages' onClick={() => setNavExpand(false)}>
 						<FontAwesomeIcon icon={faPuzzlePiece} />My Images
 					</Link>
-                    <Link to="/allimages">
+                    <Link to="/allimages" onClick={() => setNavExpand(false)}>
 						<FontAwesomeIcon icon={faPuzzlePiece} />All Images
 					</Link>
 					<Link to="/" onClick={localLogout}>
 						<FontAwesomeIcon icon={faSignInAlt} flip="horizontal" />Logout
 					</Link>
-                    <Link to="/squirrel" >
+                    <Link to="/squirrel" onClick={() => setNavExpand(false)}>
 						<FontAwesomeIcon icon={faSignInAlt} flip="horizontal" />Squirrel
 					</Link>
 				</>
@@ -39,10 +59,10 @@ const NavBar = (props) => {
 		} else {
 			return (
 				<>
-					<Link to="/login">
+					<Link to="/login" onClick={() => setNavExpand(false)}>
 						<FontAwesomeIcon icon={faClipboardCheck} />Login
 					</Link>
-					<Link to="/signup">
+					<Link to="/signup" onClick={() => setNavExpand(false)}>
 						<FontAwesomeIcon icon={faSignInAlt} />Signup
 					</Link>
 				</>
@@ -52,43 +72,37 @@ const NavBar = (props) => {
 
 	//eventually put horizontal navbar with dropdown in else statement
 	const navBarToShow = () => {
-		if (window.innerWidth > 768) {
+		if (windowWidth > 768) {
 			return (
-				<div className="navbar">
+				<nav className="navbar">
 					<img alt="sheep svg" src={undraw_refreshing_beverage_td3r} />
 					{linksToShow()}
-				</div>
+				</nav>
 			);
-		} else (
-            //not dynamic. need to adjust link buttons based on whether is logged in or not. also need to adjust the width of the main container. also need content in main container to be pushed down accordingly.
-            <div className={`horizNav${navExpand}`}>
-			<img alt="sheep svg" src={undraw_refreshing_beverage_td3r}/>
-			<div className='downArrow'>{navExpand ? <FontAwesomeIcon onClick={expandNav}icon={faAngleDoubleUp} /> : <FontAwesomeIcon onClick={expandNav}icon={faAngleDoubleDown} />}</div>
-			{navExpand ? (
-				<>
-					<div className='horizNavLink1'>
-                        <Link to="/login">
-						    <FontAwesomeIcon icon={faClipboardCheck} />Login
-					    </Link>
-                    </div>
-					<div className='horizNavLink2'>
-                        <Link to="/signup">
-						    <FontAwesomeIcon icon={faSignInAlt} />Signup
-					    </Link>
-                    </div>
-				</>
-			) : null}
-		</div>
-        )
+		} else {
+            return(
+                <nav className="horizNavBar">
+                    <img alt="sheep svg" src={undraw_refreshing_beverage_td3r}/>
+                    <div className='downArrow'>{navExpand ? <FontAwesomeIcon onClick={expandNav}icon={faAngleDoubleUp} /> : <FontAwesomeIcon onClick={expandNav}icon={faAngleDoubleDown} />}</div>
+                    {navExpand ? 
+                        linksToShow()
+                    : null
+                    }
+                </nav>
+            )
+        }
     };
     const expandNav = () => {
         setNavExpand(prevState => !prevState)
     }
 	return (	
-		<nav className="navbar">
-			<img alt="sheep svg" src={undraw_refreshing_beverage_td3r} />
-			{linksToShow()}
-		</nav>
+        <>
+        {navBarToShow()}
+        </>
+		// <nav className="navbar">
+		// 	<img alt="sheep svg" src={undraw_refreshing_beverage_td3r} />
+		// 	{linksToShow()}
+		// </nav>
 	);
 };
 

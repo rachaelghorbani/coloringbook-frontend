@@ -66,7 +66,7 @@ console.log(props.loginFailed)
 				<div className="username">
 					{/* <label>Username</label> */}
 					<input
-						name="username"
+						name="username" 
 						onChange={changeHandler}
 						value={username}
 						type="text"

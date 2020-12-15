@@ -52,12 +52,47 @@
 	top: 0;
 	transition: top .4s ease;
 }
-.navbar a:hover {
-	font-size: 1.2em;
+.navbar a:hover, .horizNavBar a:hover {
+	font-size: 1.0em;
 	top: 5px;
 }
 
-.horizNavfalse {
+.horizNavBar{
+    display: flex;
+    flex-direction: column;
+    min-height: 110px;
+    width: 100%; /* Set the width of the sidebar */
+    background: var(--navbar-background);
+	background-blend-mode: var(--navbar-background-blend-mode);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    z-index: 3;
+    position: fixed;
+    top: 0
+
+}
+.horizNavBar a{
+    margin: 10px;
+    text-decoration: none;
+    color: var(--navy-text);
+    transition: top .4s ease;
+}
+
+.downArrow {
+    margin: 10px
+    
+}
+.downArrow svg {
+
+	height: 110%
+}
+/* sheep svg */
+.horizNavBar img{
+    display: inline;
+        height: 50px;
+        margin: 10px
+}
+
+/* .horizNavfalse {
 	height: 160px;
 	width: 100%;
 	overflow-y: hidden;
@@ -80,11 +115,11 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(4, 80px);
-}
+} */
 .main {
 	margin-left: 160px;
 }
-.navbar svg {
+.navbar svg{
 	margin-right: 5px;
 }
 .navbar img:hover {
@@ -110,7 +145,7 @@
 	grid-template-columns: auto;
 	grid-template-rows: auto auto auto auto;
 	color: var(--navy-text);
-	background-image: radial-gradient(rgb(251, 252, 233), transparent 100% 100%);
+	background-image: radial-gradient(#fbfce9, transparent 100% 100%);
 	border-radius: 8px;
 	padding: 0px 30px;
 	animation: shake 1s linear;
@@ -121,7 +156,7 @@
 	grid-template-rows: auto auto auto auto;
 	color: var(--navy-text);
 	/* background-color: white; */
-	background-image: radial-gradient(rgb(251, 252, 233), transparent 100% 100%);
+	background-image: radial-gradient(#fbfce9, transparent 100% 100%);
 	border-radius: 8px;
 	padding: 0px 30px;
 }
@@ -255,23 +290,15 @@ form label {
 	margin: auto;
 	align-items: baseline;
 }
-.downArrow {
-	grid-area: 2 / 1 / 3 / 2;
-	align-items: baseline;
-	border: 1px solid red;
-}
-.downArrow svg {
-	position: relative;
-	top: 50px;
-}
-.horizNavLink2 {
+
+/* .horizNavLink2 {
 	grid-area: 3 / 1 / 4 / 2;
 	margin: auto;
 }
 .horizNavLink1 {
 	grid-area: 4 / 1 / 5 / 2;
 	margin: auto;
-}
+} */
 #particles-js{
     position: fixed; 
     /* z-index: -1; */
@@ -313,11 +340,12 @@ form label {
     .loginContainer{
         height: calc(100vh - 100px)
     }
-	.navbar {
+	/* .navbar {
 		height: 100px;
-		width: 100%; /* Set the width of the sidebar */
+		width: 100%; 
 		padding-left: 5%;
-	}
+    } */
+    
 	.main {
         margin: 100px 0px 0px 0px;
         overflow:hidden

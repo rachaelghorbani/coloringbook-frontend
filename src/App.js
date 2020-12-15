@@ -11,8 +11,8 @@ import { findUserByToken } from './redux/actions/userActions';
 import AllImagesContainer from './containers/allImagesContainer';
 import ColoringPage from './components/coloringPage'
 import UserImagesContainer from './containers/userImagesContainer'
-import SquirrelSvg from './components/svgs/squirrel';
 import FocusImagePage from './components/focusImagePage'
+import RabbitSvg from './components/svgs/rabbit';
 const App = (props) => {
 	useEffect(() => {
         props.findUserByToken(props.history);
@@ -31,6 +31,7 @@ const App = (props) => {
 			<NavBar />
 			<div className="main">
 				<Switch>
+                    
                 <Route path="/userimages/:id" render={({match}) => {
                     if(props.user){
                         const id = parseInt(match.params.id)
@@ -52,8 +53,8 @@ const App = (props) => {
 					<Route path="/login" render={() => <LoginForm />} />
 					<Route path="/signup" render={() => <SignupForm />} />
                     <Route path="/allimages" render={() => <AllImagesContainer />}/>
-                    <Route path="/myimages" render={() => <UserImagesContainer />}/>
-					<Route path="/squirrel" render={() => <SquirrelSvg size="Full"/>} />
+                    <Route path="/myimages" render={() => props.user? <UserImagesContainer /> : props.history.push('/')}/>
+					<Route path="/squirrel" render={() => <RabbitSvg size="Full"/>} />
 					<Route path="/" render={() => <WelcomePage />} />
 				</Switch>
 			</div>
