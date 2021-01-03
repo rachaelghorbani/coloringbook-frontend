@@ -7,14 +7,16 @@ import undraw_refreshing_beverage_td3r from '../assets/undraw_refreshing_beverag
 import { connect } from 'react-redux';
 
 const NavBar = (props) => {
+
+    const [navExpand, setNavExpand ] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+    
 	const localLogout = () => {
         localStorage.removeItem('token')
         props.logoutUser();
         setNavExpand(false)
 	};
 
-    const [navExpand, setNavExpand ] = useState(false);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
  
     // sets an event listener for window resize, but only resets the windowWidth, thereby rerendering the component, if the width has changed, NOT the height. Don't need to listen to height changes
