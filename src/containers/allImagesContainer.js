@@ -24,7 +24,9 @@ const AllImagesContainer = (props) => {
 	return (
 		<div className="loginContainer">
 			<ParticlesBackground />
+            
 			<h1 className='selectImageHeader'>Select An Image to Color</h1>
+            <h4 className='selectImageLink'>These beautiful images have been adapted from Johanna Brasford's <a target="_blank"href="https://www.amazon.com/dp/1780674880/ref=cm_sw_em_r_mt_dp_jet2FbQJ23V2M">Enchanted Forest</a></h4>
 			<div className="cardContainer">
                 {renderImages()}
                 </div>

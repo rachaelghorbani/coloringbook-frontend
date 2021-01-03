@@ -1,5 +1,5 @@
 .cardContainer{
-    height: 85%;
+    height: 80%;
 	/* width: 84%; */
     /* margin-top: 10%; */
     display: flex;
@@ -28,13 +28,27 @@ margin: auto;
     position: absolute;
     top: 0
 }
+.selectImageLink{
+    position:absolute;
+    top: 8%
 
+}
+.selectImageLink a{
+    text-decoration: none;
+    color:dodgerblue
+}
+.selectImageLink a:visited{
+    color: navy
+}
 
 @media only screen and (max-width: 768px) {
     .cardContainer{
-        height: 75%;
+        height: 68%;
     }
     .selectImageHeader, .userImagesHeader{
         top: 100px
+    }
+    .selectImageLink{
+        top: 22%
     }
 }

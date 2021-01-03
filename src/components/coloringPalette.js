@@ -69,6 +69,7 @@ const ColoringPalette = (props) => {
 		});
     };
     
+    
     const handleChange = (color, e) => {
         console.log(color.hex)
         props.setCurrentColor(color.hex)

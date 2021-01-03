@@ -39,9 +39,9 @@ const NavBar = (props) => {
 		if (props.user) {
 			return (
 				<>
-					<Link to="/" onClick={() => setNavExpand(false)}>
+					{/* <Link to="/" onClick={() => setNavExpand(false)}>
 						<FontAwesomeIcon icon={faHome} />Home
-					</Link>
+					</Link> */}
 					<Link to='/myimages' onClick={() => setNavExpand(false)}>
 						<FontAwesomeIcon icon={faPuzzlePiece} />My Images
 					</Link>
