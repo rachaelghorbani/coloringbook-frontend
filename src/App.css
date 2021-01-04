@@ -33,8 +33,10 @@
 	height: 100%; /* Full-height: remove this if you want "auto" height */
 	width: 160px; /* Set the width of the sidebar */
 	position: fixed; /* Fixed position elemnts are alwasy fixed position based on entire html document. so when set to fixed and left 0 it will be stuck on the left Sidebar (stay in place on scroll) and fixed*/
-	/* z-index: 1; Stay on top */
-	top: 0; /* Stay at the top */
+    /* z-index: 1; Stay on top */
+      /* Stay at the top */
+    /* top: 0;  */
+  
 	left: 0;
 	background: var(--navbar-background);
 	background-blend-mode: var(--navbar-background-blend-mode);
@@ -55,6 +57,17 @@
 .navbar a:hover, .horizNavBar a:hover {
 	font-size: 1.0em;
 	top: 5px;
+}
+/* font awesome icons spacing */
+.navbar svg{
+	margin-right: 5px;
+}
+.navbar img:hover {
+	animation: dance 1s linear;
+}
+
+.navbar img {
+	height: 10%;
 }
 
 .horizNavBar{
@@ -119,12 +132,7 @@
 .main {
 	margin-left: 160px;
 }
-.navbar svg{
-	margin-right: 5px;
-}
-.navbar img:hover {
-	animation: dance 1s linear;
-}
+
 
 .loginContainer {
     /* position: fixed;
@@ -280,9 +288,7 @@ form label {
 .loginHeader svg {
 	margin: 0 12px;
 }
-.navbar img {
-	height: 10%;
-}
+
 .horizNavfalse img,
 .horizNavtrue img {
 	grid-area: 1 / 1 / 2 / 2;
