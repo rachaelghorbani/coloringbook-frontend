@@ -39,8 +39,10 @@
   
 	left: 0;
 	background: var(--navbar-background);
-	background-blend-mode: var(--navbar-background-blend-mode);
-	overflow-x: hidden; /* Disable horizontal scroll */
+    background-blend-mode: var(--navbar-background-blend-mode);
+    /* Disable horizontal scroll */
+    /* overflow-x: hidden;  */
+    
 	padding-top: 20px;
 }
 .navbar a {
