@@ -5,8 +5,8 @@ import {createUserImage} from '../redux/actions/userImageActions'
 import '../css/imageCard.css'
 import {components} from './componentList'
 
-import FoxSvg from './svgs/fox';
-import SquirrelSvg from './svgs/squirrel'
+// import FoxSvg from './svgs/fox';
+// import SquirrelSvg from './svgs/squirrel'
 
 const ImageCard = (props) => {
     //props.image is the userimage instance
