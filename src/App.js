@@ -22,9 +22,6 @@ const App = (props) => {
 
 		//could add a general class name to all svgs and then when we cant to make a card, document query selector all and iterate through them to create an image with the src= to the svg
     }, []);
-    if(props.user){
-    console.log(props.user.user_images)
-    }
 
 	return (
 		<div className="App">
@@ -42,11 +39,15 @@ const App = (props) => {
                     }
                 }}/>
                     <Route path="/focusimage/:id" render={({match}) => {
+                        if(props.user){
                         const id = parseInt(match.params.id)
                         const image = props.user.user_images.find(ui => ui.id === id)
                         return(
                         <FocusImagePage image={image}/>
                         )
+                    }else{
+                        props.history.push("/allimages")
+                    }
                     }
                 } />
 
