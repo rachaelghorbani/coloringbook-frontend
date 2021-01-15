@@ -1,19 +1,11 @@
 .cardContainer{
     height: 80%;
-	/* width: 84%; */
-    /* margin-top: 10%; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* text-align: center; */
-    /* margin-top: 0%; */
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 2fr 2fr; */
     position: absolute;
     bottom: 0;
     overflow: auto
-    /* overflow-y: scroll; */
 }
 
 .cardContainer::-webkit-scrollbar {
@@ -21,7 +13,6 @@
   }
 
 .cardContainerHeader{
-/* grid-area: 1 / 1 / 2 / 4; */
 margin: auto;
 }
 .selectImageHeader, .userImagesHeader{
