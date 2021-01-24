@@ -13,6 +13,9 @@ import ColoringPage from './components/coloringPage'
 import UserImagesContainer from './containers/userImagesContainer'
 import FocusImagePage from './components/focusImagePage'
 import RabbitSvg from './components/svgs/rabbit';
+
+// testing git
+
 const App = (props) => {
 	useEffect(() => {
         props.findUserByToken(props.history);
